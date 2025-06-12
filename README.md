@@ -1,2 +1,2 @@
-# blog-manage
+# blog
 a blog project admin manage
