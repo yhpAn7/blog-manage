@@ -9,11 +9,8 @@
                     <Navbar></Navbar>
                 </el-header>
                 <el-main class="main-container">
-                    <router-view>
                         <AppMain></AppMain>
-                    </router-view>
                 </el-main>
-                <!-- <el-footer>Footer</el-footer> -->
             </el-container>
         </el-container>
     </div>

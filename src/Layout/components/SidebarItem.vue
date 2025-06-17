@@ -1,31 +1,28 @@
 <template>
-
-    <!-- 没有子菜单的情况 -->
-    <el-menu-item :index="route.path" v-if="!route.children">
-        <template #default>
-            <el-icon :icon="route.meta.icon"></el-icon>
-            <span>{{ route.meta.title }}</span>
-        </template>
-    </el-menu-item>
-
-
-    <!-- 有子菜单的情况 -->
-    <el-sub-menu :index="route.path" v-else>
-        <template #title>
-            <el-icon :icon="route.meta.icon"></el-icon>
-            <span>{{ route.meta.title }}</span>
-        </template>
-        <SidebarItem v-for="item in route.children" :key="item.path" :route="item" />
-    </el-sub-menu>
+  <el-sub-menu v-if="route.children && route.children.length" :index="route.path">
+    <template #title>
+      <el-icon v-if="route.meta && route.meta.icon">
+        <component :is="route.meta.icon" />
+      </el-icon>
+      <span>{{ route.meta?.title }}</span>
+    </template>
+    <SidebarItem v-for="item in route.children" :key="item.path" :route="item" />
+  </el-sub-menu>
+  <el-menu-item v-else :index="route.path">
+    <el-icon v-if="route.meta && route.meta.icon">
+      <component :is="route.meta.icon" />
+    </el-icon>
+    <span>{{ route.meta?.title }}</span>
+  </el-menu-item>
 </template>
 
 <script setup lang="ts">
-defineProps({
-    route: {
-        type: Object,
-        required: true
-    }
-})
+const props = defineProps({
+  route: {
+    type: Object,
+    required: true
+  }
+});
 </script>
 
 <style scoped></style>

@@ -5,56 +5,48 @@ const baseRoutes: Array<RouteRecordRaw> = [
     {
         path: '/',
         component: () => import('@/layout/index.vue'),
-        name: 'layout',
+        name: 'layoutHome',
+        redirect: '/home/index',
+        meta: {
+            title: '首页管理'
+        },
         children: [
             {
-                path: '/home',
-                component: () => import('@/layout/index.vue'),
-                name: 'layoutHome',
-                redirect: '/home/index',
+                path: '/home/index',
+                component: () => import('@/views/home/index.vue'),
+                name: 'home',
                 meta: {
-                    title: '首页管理'
-                },
-                children: [
-                    {
-                        path: '/home/index',
-                        component: () => import('@/views/home/index.vue'),
-                        name: 'home',
-                        meta: {
-                            title: '首页'
-                        }
-                    },
-                    {
-                        path: '/home/child',
-                        component: () => import('@/views/login/index.vue'),
-                        name: 'homeChild',
-                        meta: {
-                            title: '子路由'
-                        }
-                    }
-                ]
+                    title: '首页'
+                }
             },
             {
-                path: '/about',
-                component: () => import('@/layout/index.vue'),
-                name: 'aboutLayout',
-                redirect: '/about/child',
+                path: '/home/child',
+                component: () => import('@/views/login/index.vue'),
+                name: 'homeChild',
                 meta: {
-                    title: '关于'
-                },
-                children: [
-                    {
-                        path: '/about/child',
-                        component: () => import('@/views/about/index.vue'),
-                        name: 'child',
-                        meta: {
-                            title: '关于子路由'
-                        }
-                    }
-                ]
+                    title: '子路由'
+                }
             }
         ]
     },
+    {
+        path: '/article',
+        component: () => import('@/layout/index.vue'),
+        name: 'layoutArticle',
+        meta: {
+            title: '文章管理'
+        },
+        children: [
+            {
+                path: '/article/index',
+                component: () => import('@/views/article/index.vue'),
+                name: 'article',
+                meta: {
+                    title: '文章列表'
+                }
+            },
+        ]
+    }
 ]
 
 export default baseRoutes
