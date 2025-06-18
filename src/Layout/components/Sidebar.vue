@@ -46,6 +46,7 @@ const allRoutes = filterRoutes([...routes]);
 .sidebar-container {
     height: calc(100vh - 16px);
     overflow: hidden;
+    background-color: rgba(255, 125, 26, 0.08);
     .scrollbar-container {
         height: calc(100vh - 110px);
         ::-webkit-scrollbar {
@@ -54,6 +55,58 @@ const allRoutes = filterRoutes([...routes]);
     }
     .menu-container{
         border: none;
+        background: transparent;
+        padding: 8px 0;
+        background: rgba(255, 125, 26, 0.08);
+        :deep(.el-menu-item) {
+            border-radius: 8px;
+            margin: 4px 12px;
+            color: var(--el-text-color-regular);
+            font-size: 16px;
+            transition: background 0.2s, color 0.2s;
+            &:hover {
+                background: rgba(255, 125, 26, 0.08);
+                color: var(--el-color-primary);
+            }
+        }
+        :deep(.el-menu-item.is-active) {
+            background: rgba(255, 125, 26, 0.10);
+            color: var(--el-color-primary);
+            font-weight: bold;
+            box-shadow: 0 2px 8px 0 rgba(255, 125, 26, 0.10);
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 8px;
+                bottom: 8px;
+                width: 4px;
+                border-radius: 4px;
+                background: var(--el-color-primary);
+                transition: background 0.2s;
+            }
+        }
+        :deep(.el-sub-menu__title) {
+            border-radius: 8px;
+            margin: 4px 12px;
+            color: var(--el-text-color-regular);
+            font-size: 16px;
+            transition: background 0.2s, color 0.2s;
+            &:hover {
+                background: rgba(255, 125, 26, 0.08);
+                color: var(--el-color-primary);
+            }
+        }
+        :deep(.el-menu-item , .el-sub-menu__title) {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+        :deep(.el-menu-item .el-icon, .el-sub-menu__title .el-icon) {
+            margin-right: 10px;
+            font-size: 18px;
+        }
     }
 }
 </style>

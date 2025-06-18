@@ -1,18 +1,1418 @@
+// 主题变量
+@use "element-plus/theme-chalk/src/common/var.scss" as *;
+@use "element-plus/theme-chalk/src/dark/var.scss" as *;
+:root {
+  /* 亮色主题 */
+  --el-color-primary: #ff7d1a;
+  --el-color-primary-light-3: #ffae6b;
+  --el-color-primary-light-5: #ffd7b3;
+  --el-color-primary-light-7: #fff2e6;
+  --el-color-primary-dark-2: #c95e00;
+  --el-bg-color: #f8fafc;
+  --el-bg-color-page: #f8fafc;
+  --el-bg-color-overlay: #fff;
+  --el-text-color-primary: #222;
+  --el-text-color-regular: #444;
+  --el-border-color: #e5e7eb;
+}
+body.dark-theme {
+  --el-color-primary: #ffb86c;
+  --el-color-primary-light-3: #ffd7b3;
+  --el-color-primary-light-5: #fff2e6;
+  --el-color-primary-light-7: #2d2d2d;
+  --el-color-primary-dark-2: #c95e00;
+  --el-bg-color: #181c27;
+  --el-bg-color-page: #181c27;
+  --el-bg-color-overlay: #23263a;
+  --el-text-color-primary: #f6f6f6;
+  --el-text-color-regular: #b5b5b5;
+  --el-border-color: #23263a;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
+    background: var(--el-bg-color);
+    color: var(--el-text-color-primary);
+    transition: background 0.3s, color 0.3s;
 }
-
 .page-container {
     padding: 20px;
     margin: 0 auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: var(--el-bg-color-overlay);
     min-height: 1200px;
+    transition: background-color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button {
+    background: var(--color-btn-bg) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-button:hover, .el-button:focus {
+    background: var(--color-btn-bg-hover) !important;
+    color: var(--color-btn-text) !important;
+    border: 1px solid var(--color-btn-border) !important;
+}
+.el-select, .el-dropdown, .el-menu, .el-breadcrumb {
+    background: var(--color-bg-secondary) !important;
+    color: var(--color-text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+.el-card {
+    background: var(--color-card-bg) !important;
+    color: var(--color-text)!important;
 }

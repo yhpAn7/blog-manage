@@ -27,7 +27,7 @@
                                     <el-option label="近30天" :value="2"></el-option>
                                 </el-select>
                             </template>
-                            <div id="chatLine" style="width:640px; height: 400px; box-sizing: border-box;"></div>
+                            <div id="chatLine" style="min-width:640px; height: 400px; box-sizing: border-box;"></div>
                         </el-card>
                     </el-col>
                 </el-row>
@@ -40,7 +40,7 @@
                                     <el-option label="近30天" :value="2"></el-option>
                                 </el-select>
                             </template>
-                            <div id="chatPie" style="width:640px; height: 400px; box-sizing: border-box;"></div>
+                            <div id="chatPie" style="min-width:640px; height: 400px; box-sizing: border-box;"></div>
                         </el-card>
                     </el-col>
                 </el-row>

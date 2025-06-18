@@ -13,9 +13,9 @@
             </el-breadcrumb>
         </div>
         <div class="right-section">
-            <div class="theme-template">
+            <div class="theme-template" @click="toggleTheme">
                 <el-icon size="22px">
-                    <Sunny  />
+                    <Sunny />
                 </el-icon>
             </div>
             <div class="username">admin</div>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { ElBreadcrumb, ElBreadcrumbItem } from 'element-plus';
 import { Sunny } from '@element-plus/icons-vue'
@@ -46,6 +46,29 @@ const breadcrumbItems = computed(() => {
     return matched;
 });
 
+const theme = ref<'light' | 'dark'>('light')
+const isAnimating = ref(false)
+
+function toggleTheme() {
+    if (isAnimating.value) return;
+    isAnimating.value = true;
+    const body = document.body;
+    body.classList.add('theme-transition');
+    setTimeout(() => {
+        theme.value = theme.value === 'light' ? 'dark' : 'light';
+        body.classList.toggle('dark-theme', theme.value === 'dark');
+        body.classList.toggle('light-theme', theme.value === 'light');
+        setTimeout(() => {
+            body.classList.remove('theme-transition');
+            isAnimating.value = false;
+        }, 600);
+    }, 10);
+}
+
+// 初始化主题
+if (typeof window !== 'undefined') {
+    document.body.classList.add('light-theme');
+}
 </script>
 
 <style scoped>
@@ -87,5 +110,37 @@ const breadcrumbItems = computed(() => {
 .theme-template {
     margin: 0 12px;
     cursor: pointer;
+}
+</style>
+<style>
+body.light-theme {
+    --navbar-bg: #fff;
+    --navbar-text: #333;
+    --sidebar-bg: #f5f7fa;
+    --sidebar-text: #333;
+    --app-bg: #f5f7fa;
+    background: var(--app-bg);
+    color: var(--navbar-text);
+}
+body.dark-theme {
+    --navbar-bg: #181c27;
+    --navbar-text: #f6f6f6;
+    --sidebar-bg: #23263a;
+    --sidebar-text: #e0e0e0;
+    --app-bg: #181c27;
+    background: var(--app-bg);
+    color: var(--navbar-text);
+}
+body.theme-transition {
+    overflow: hidden;
+    animation: theme-close-window 0.6s cubic-bezier(.77,0,.18,1) forwards;
+}
+@keyframes theme-close-window {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    100% {
+        clip-path: inset(100% 0 0 0);
+    }
 }
 </style>
