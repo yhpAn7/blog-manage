@@ -54,14 +54,17 @@ function toggleTheme() {
     isAnimating.value = true;
     const body = document.body;
     body.classList.add('theme-transition');
+    const time = 1500
     setTimeout(() => {
         theme.value = theme.value === 'light' ? 'dark' : 'light';
-        body.classList.toggle('dark-theme', theme.value === 'dark');
-        body.classList.toggle('light-theme', theme.value === 'light');
         setTimeout(() => {
             body.classList.remove('theme-transition');
             isAnimating.value = false;
-        }, 600);
+        }, time);
+        setTimeout(() => {
+            body.classList.toggle('dark-theme', theme.value === 'dark');
+            body.classList.toggle('light-theme', theme.value === 'light');
+        }, time / 2);
     }, 10);
 }
 
@@ -122,6 +125,7 @@ body.light-theme {
     background: var(--app-bg);
     color: var(--navbar-text);
 }
+
 body.dark-theme {
     --navbar-bg: #181c27;
     --navbar-text: #f6f6f6;
@@ -131,16 +135,23 @@ body.dark-theme {
     background: var(--app-bg);
     color: var(--navbar-text);
 }
+
 body.theme-transition {
     overflow: hidden;
-    animation: theme-close-window 0.6s cubic-bezier(.77,0,.18,1) forwards;
+    animation: theme-close-window 1.5s cubic-bezier(.77, 0, .18, 1) forwards;
 }
+
 @keyframes theme-close-window {
     0% {
-        clip-path: inset(0 0 0 0);
+        clip-path: circle(150% at 100% 0%);
     }
+
+    50% {
+        clip-path: circle(0% at 100% 0%);
+    }
+
     100% {
-        clip-path: inset(100% 0 0 0);
+        clip-path: circle(150% at 0% 0%);
     }
 }
 </style>
